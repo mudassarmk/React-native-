@@ -1,0 +1,27 @@
+import React from "react";
+import { StyleSheet, Text, View } from "react-native";
+
+const Flex = () => {
+  return (
+    <View style={{flex :1 , flexDirection: 'row'}} >
+      <View style={{ flex: 334, flexDirection:'column' , backgroundColor: "red" }}> 
+      <View style={{ flex: .10, backgroundColor: "white" }}> 
+      <Text> Mudassar </Text>
+      
+      </View>
+      <View style={{ flex: .10, backgroundColor: "green" }}> 
+      <Text> Kamran </Text>
+      </View>
+      <View style={{ flex: .10, backgroundColor: "blue" }}> 
+      <Text> zeeshan </Text>
+      
+      </View>
+
+      </View>
+      <View style={{ flex: 334, backgroundColor: "darkorange" }} />
+      <View style={{ flex: 334, backgroundColor: "green" }} />
+    </View>
+  );
+};
+
+export default Flex;
