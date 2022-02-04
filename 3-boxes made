@@ -1,0 +1,42 @@
+import React, { useState } from "react";
+import { View, TouchableOpacity, Text, StyleSheet } from "react-native";
+
+export default function sandbox() {
+  return (
+  <View style ={ styles.container}> 
+    <Text style = {styles.boxOne}> one </Text>
+    <Text style = {styles.boxTwo}> two </Text>
+    <Text style = {styles.boxThree}> three </Text>
+    <Text style = {styles.boxFour}> four </Text>
+  </View>
+  )
+}
+
+const styles = StyleSheet.create({
+  container : {
+    //flex : 1,
+    paddingtop :60,
+    flexDirection:'row',
+    backgroundColor:'skyblue',
+    justifyContent:'space-around',
+    alignItems : 'flex-end',
+    
+  },
+  boxOne : {
+    padding :10,
+    backgroundColor :"gold",
+  },
+  boxTwo : {
+    padding :20,
+    backgroundColor :"violet",
+  },
+  boxThree : {
+    padding :30,
+    backgroundColor :"blue",
+  },
+  boxFour : {
+    padding :40,
+    backgroundColor :"green",
+  },
+  
+})
