@@ -1,0 +1,20 @@
+import React, { useState } from "react";
+import { Button, Text, View} from "react-native";
+
+const app = () => {
+  const [count ,setcount] =useState(1)
+  return (
+    <View>
+     <Button title= " upada the value" onPress = {()=>setcount(count-1)} / >
+
+     <Text style = {{ fontSize :40}} />
+     {count}
+     <Button title= " upada the value" onPress = {()=>setcount(count+1)} / >
+     
+      
+    </View>
+  );
+
+}
+
+export default app;
