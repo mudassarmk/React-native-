@@ -1,0 +1,32 @@
+import React, { useState } from "react";
+import { Button, Text, View,StyleSheet,Image,FlatList} from "react-native";
+
+function app () {
+  const [data,setdata] = useState([
+    {id:'1' , name:'first'},
+    {id: '2', name:'second'},
+    {id:'3' , name:'third'},
+  ])
+  const [ loadind , setloading] = useState(false)
+  return(
+    <View> 
+    <Text> flatlist.... </Text>
+    <FlatList
+    data ={data}
+    renderItem = {({item})=>{
+      return <Text> {item.name} </Text>
+    }}
+    onRefresh ={({item})=>{
+      setloading(true)
+      setdata([...data],{id:Math.random(),name :"new item"})
+      setloading(false)
+    }}
+    refreshing ={loadind}
+    keyExtractor = {(item)=> item.id}
+     />
+    
+    </View>
+  
+  );
+}
+export default app ;
