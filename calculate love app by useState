@@ -1,0 +1,54 @@
+import React, { useState } from "react";
+import { Button, Text, View,StyleSheet,Image,FlatList,TextInput,ActivityIndicator} from "react-native";
+import constants from 'expo-constants'
+
+function app () {
+  const [itext1 ,settext1] =useState("")
+  const [itext2 ,settext2] =useState("")
+  const [loading ,setloading] =useState(false)
+  if(loading)
+  {
+    return (
+      <View> 
+      <Text> calculating the love... </Text>
+      <ActivityIndicator size={40} color="green" />
+      </View>
+    )
+  }
+
+  const calculatelove = ()=> {
+    setloading(true)
+    setTimeout(()=>{
+      setloading(false)
+      alert (Math.floor(Math.random()*100)+"%")
+    },200)
+  }
+  return (
+    <View style={{alignItems:"center"}}>
+    <Text> Text Input </Text>
+     <TextInput
+    placeholder = 'Type Name of perosn 1'
+    value={itext1}
+    style ={{borderWidth:2 , height:40}}
+    onChangeText = {({text})=>{
+      settext1(text)
+      }}
+     />
+    <TextInput
+    placeholder = 'Type name of person 2'
+    value={itext2}
+    style ={{borderWidth:2 , height:40}}
+    onChangeText = {({text})=>{
+      settext2(text)
+      }}
+     />
+     <Button 
+     title= "press me"
+     onPress = {()=>{
+       calculatelove()
+     }}
+     />
+     </View>
+  );
+}
+export default app ;
